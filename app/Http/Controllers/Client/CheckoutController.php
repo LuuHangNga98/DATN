@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Mail\TestMail;
 use Illuminate\Http\Request;
 use Session;
 use App\Models\custommer;
@@ -15,7 +16,7 @@ use App\Models\shipping;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use PDF;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Social; //sử dụng model Social
@@ -444,39 +445,37 @@ class  CheckoutController extends Controller
             'password'=>'required|min:8|max:32',
             're_password'=>'required|same:password'
         ],[
-            'name.required'=>'+Ban chưa nhập tên',
-            'email.required'=>'+Ban chưa nhập email',
-            'email.email'=>'+Email chưa đúng định dạng',
-            'email.unique'=>'+Email đã tồn tại',
-            'password.required'=>'+Bạn chưa nhập password',
-            'sdt.required'=>'+Bạn chưa nhập số điện thoạt',
-            'sdt.regex'=>'+Số Điện thoại chưa đúng định dạng',
-            'sdt.unique'=>'+Số điện thoại đã tồn tại',
-            're_password.required'=>'+Bạn chưa nhập lại password',
-            'password.min'=>'+password lớn hơn 8',
-            'password.max'=>'+Password lớn hơn 32',
-            're_password.same'=>'+Password chưa đúng'
+            'name.required'=>'Ban chưa nhập tên',
+            'email.required'=>'Ban chưa nhập email',
+            'email.email'=>'Email chưa đúng định dạng',
+            'email.unique'=>'Email đã tồn tại',
+            'password.required'=>'Bạn chưa nhập password',
+            'phone.required'=>'Bạn chưa nhập số điện thoạt',
+            'phone.regex'=>'Số Điện thoại chưa đúng định dạng',
+            'phone.unique'=>'Số điện thoại đã tồn tại',
+            're_password.required'=>'Bạn phải nhập lại mật khẩu',
+            'password.min'=>'Mật khẩu phải ít nhất 8 ký tự',
+            'password.max'=>'Mật khẩu không vượt quá 32 ký tự',
+            're_password.same'=>'Mật khẩu không trùng khớp'
         ]);
 
-    	// $cus=array();
-    	// $cus['customer_name']=$req->name;
-    	// $cus['customer_email']=$req->email;
-    	// $cus['customer_password']=md5($req->password);
-    	// $cus['customer_phone']=$req->sdt;
-    	// $cus_id=DB::table('tbl_customers')->insertGetId($cus);
-    	// Session::put('customer_id',$cus_id);
-    	// Session::put('customer_name',$req->customer_name);
-    	// return redirect()->route('cli_index');
+    	$cus=array();
+    	$cus['customer_name']=$req->name;
+    	$cus['customer_email']=$req->email;
+    	$cus['customer_password']=md5($req->password);
+    	$cus['customer_phone']=$req->sdt;
+    	$cus_id=DB::table('tbl_customers')->insertGetId($cus);
+    	Session::put('customer_id',$cus_id);
+    	Session::put('customer_name',$req->customer_name);
+    	return redirect()->route('cli_index');
+
         $email = $req->email;
         $code = bcrypt(md5(time().$email));
         $url = route('xacnhanTK',['name'=>$req->name,'email'=>$req->email,'phone'=>$req->sdt,'password'=>md5($req->password),'code_active'=>$code]);
         $data =[
             'route' =>$url
         ];
-        Mail::send('email.xacnhantk',$data, function($message) use ($email){
-            $message->to($email, 'Verify password')->subject('Xác nhận mật khẩu!!');
-            $message->from($email);
-        });
+        Mail::to($email)->send(new TestMail());
         return redirect()->route('cli_index')->with('message','XIN BẠN HÃY CHECK MAIL ĐỂ XÁC NHẬN TÀI KHOẢN!!');;
     }
     public function xacnhanTK(Request $req){

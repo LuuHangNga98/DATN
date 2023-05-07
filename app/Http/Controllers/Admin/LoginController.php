@@ -26,18 +26,18 @@ class LoginController extends Controller
             'password'=>'required|min:8|max:32',
             're_password'=>'required|same:password'
         ],[
-            'name.required'=>'+Ban chưa nhập tên',
-            'email.required'=>'+Ban chưa nhập email',
-            'email.email'=>'+Email chưa đúng định dạng',
-            'email.unique'=>'+Email đã tồn tại',
-            'password.required'=>'+Bạn chưa nhập password',
-            'phone.required'=>'+Bạn chưa nhập số điện thoạt',
-            'phone.regex'=>'+Số Điện thoại chưa đúng định dạng',
-            'phone.unique'=>'+Số điện thoại đã tồn tại',
-            're_password.required'=>'+Bạn chưa nhập lại password',
-            'password.min'=>'+password lớn hơn 8',
-            'password.max'=>'+Password lớn hơn 32',
-            're_password.same'=>'+Password chưa đúng'
+            'name.required'=>'Ban chưa nhập tên',
+            'email.required'=>'Ban chưa nhập email',
+            'email.email'=>'Email chưa đúng định dạng',
+            'email.unique'=>'Email đã tồn tại',
+            'password.required'=>'Bạn chưa nhập password',
+            'phone.required'=>'Bạn chưa nhập số điện thoạt',
+            'phone.regex'=>'Số Điện thoại chưa đúng định dạng',
+            'phone.unique'=>'Số điện thoại đã tồn tại',
+            're_password.required'=>'Bạn phải nhập lại mật khẩu',
+            'password.min'=>'Mật khẩu phải ít nhất 8 ký tự',
+            'password.max'=>'Mật khẩu không vượt quá 32 ký tự',
+            're_password.same'=>'Mật khẩu không trùng khớp'
         ]);
            
             $user = new User();
@@ -45,9 +45,9 @@ class LoginController extends Controller
             $user->email = $req->email;
             $user->phone = $req->phone;
             $user->password = $req->password;
-            //dd($user);
+            dd($user);
             $user->save();
-            return redirect()->route('login')->with('thongbao','Đăng ký tai khoan thanh cong!!');
+            return redirect()->route('login')->with('thongbao','Đăng ký tài khoản thành công!!');
     }
     public function getdangnhap(){
         return view('admin.taikhoan.dangnhap');

@@ -5,7 +5,7 @@
 				<div class="col-md-3 logo_agile">
 					<h1 class="text-center">
 						<a href="{{route('cli_index')}}" >
-							<img src="{!! asset('web/images/logo.jpg')!!}" alt=" " >
+							<img src="{!! asset('web/images/logo.jpg')!!}" alt="" width="180px" height="150px"  class="img-fluid">
 						</a>
 					</h1>
 				</div>

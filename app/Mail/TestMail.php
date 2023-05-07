@@ -16,9 +16,9 @@ class TestMail extends Mailable
      *
      * @return void
      */
-    public function __construct($detail)
+    public function __construct()
     {
-        $this->detail=$detail;
+        // $this->detail=$detail;
     }
 
     /**
@@ -28,6 +28,6 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('test gửi mail')->view('admin.mail.send_mail');
+        return $this->subject('Xác Thực Email')->view('admin.mail.send_mail');
     }
 }

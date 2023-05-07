@@ -45,15 +45,6 @@
 	            <li class="line"></li> -->
             <li class="link-menu"><a class="transition" href="{{URL::to('/lien-he')}}" title=""><h2>@lang('lang.contact')</h2></a></li>
 			
-
-			<?php
-				$cus_id=Session::get('customer_id');
-				if(isset($cus_id)){ ?>
-				<li class="line"></li> 	
-			   <li class="link-menu"><a class="transition" href="{{url('/history')}}" title=""><h2>@lang('lang.orderhistory')</h2></a></li>
-			   <?php 
-			   }
-			?>
             <!-- <li class="line"></li>
 			<li>
                 <a class="transition" style="cursor: pointer;" title=""><h2>@lang('lang.languge')</h2></a>

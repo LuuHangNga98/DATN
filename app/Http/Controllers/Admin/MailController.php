@@ -8,7 +8,8 @@ use App\Models\custommer;
 use App\Models\Coupon;
 use Carbon\Carbon;
 use App\Mail\TestMail;
-use Mail;
+use Illuminate\Support\Facades\Mail;
+
 
 class MailController extends Controller
 {

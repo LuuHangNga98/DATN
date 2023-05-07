@@ -4,12 +4,12 @@
 
 <head>
 @include('inc.bootstrap_cli')
-
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 	<div class="loader">
-		<img src="{!! asset('web/imager_10270.jpg')!!}" alt="noimg">
+		<img src="{!! asset('web/imager_10270.jpg')!!}" alt="noimg" width="100px" height="100px">
 	</div>
 	<!-- top-header -->
     @include('inc.topheader')
