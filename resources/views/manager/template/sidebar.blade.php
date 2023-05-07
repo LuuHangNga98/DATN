@@ -69,7 +69,7 @@
                   </li> -->
                   @chuyen
                   <li>
-                      <a href="{{URL::to('impersonate-destroy')}}">ngừng chuyển quyền<u></u></a>
+                      <a href="{{URL::to('impersonate-destroy')}}">Ngừng chuyển quyền<u></u></a>
                   </li>
                   @endchuyen
 

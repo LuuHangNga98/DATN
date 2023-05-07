@@ -105,8 +105,6 @@
 							
 						</div>
 
-						<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3 patop">
-						TOPPING</h3>
 						<div class="run1 cach">
 
 							@foreach($toping as $t)
@@ -150,40 +148,7 @@
 						</div>
 
 
-						<div class="join-w3l1 py-sm-5 py-4">
-							<div class="container py-xl-4 py-lg-2">
-								<div class="row">
-									<div class="col-lg-6">
-										<div class="join-agile text-left p-4">
-											<div class="row">
-												<div class="col-sm-7 offer-name">
-													<h6>@lang('lang.sanphammoi')</h6>
-													<h4 class="mt-2 mb-3">Trà sữa chocola mới ra</h4>
-													<p>@lang('lang.giamgia')</p>
-												</div>
-												<div class="col-sm-5 offerimg-w3l">
-													<img src="{!! asset('web/images/z10.png')!!}" alt="" class="img-fluid">
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 mt-lg-0 mt-5">
-										<div class="join-agile text-left p-4">
-											<div class="row ">
-												<div class="col-sm-7 offer-name">
-													<h6>@lang('lang.decrip_luachon')</h6>
-													<h4 class="mt-2 mb-3">Trà chanh cỡ lớn</h4>
-													<p>@lang('lang.decript_giaohang')</p>
-												</div>
-												<div class="col-sm-5 offerimg-w3l">
-													<img src="{!! asset('web/images/z11.png')!!}" alt="" class="img-fluid">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						
 						<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3 sellchay1">@lang('lang.SelleingProduct')</h3>
 
 						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
