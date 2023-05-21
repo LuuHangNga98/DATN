@@ -1,8 +1,6 @@
 @extends('client/layout_cli')
 @section('content')
-<div class="page-head_agile_info_w3l">
 
-</div>
 <div class="services-breadcrumb">
     <div class="agile_inner_breadcrumb">
         <div class="container">

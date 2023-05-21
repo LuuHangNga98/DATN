@@ -25,7 +25,7 @@ body a {
 }
 
 @font-face{
-    font-family: 'beautiful';
+    font-family: "Times New Roman", Times, serif;
     src: url('public/web/Lobster-Regular.ttf');
     font-style: normal;
     font-display: block;
@@ -45,10 +45,10 @@ body a {
 }
 .menu ul{width: 80%;padding:0px;margin:auto;list-style:none;}
 .menu ul li{position:relative;z-index:99;}
-.menu ul li.line{width:1px;height:15px;background-color:rgba(255,255,255,0.5);}
+.menu ul li.line{width:1px;height:30px;background-color:rgb(0, 0, 0);}
 .menu ul li a{display:block;position:relative;z-index:1;text-align:center;text-decoration:none!important;}
 .menu ul li a h2{font-size:16px;color: #000000;margin:0px;padding: 17px 8px;text-transform:uppercase;font-family: inherit;}
-.menu ul li a.active,.menu ul li:hover > a{background: #1bf0b5;}
+.menu ul li a.active,.menu ul li:hover > a{background: #eb0101;}
 .menu ul li ul{position:absolute;min-width:200px;background:white;box-shadow:0 3px 11px 0 rgba(0,0,0,0.1);-webkit-transform:perspective(600px) rotateX(-90deg);transform:perspective(600px) rotateX(-90deg);-webkit-transform-origin:0 0 0;transform-origin:0 0 0;opacity:0;visibility:hidden;transition:all .5s;}
 .menu ul li:hover > ul{-webkit-transform:perspective(600px) rotateX(0);transform:perspective(600px) rotateX(0);-webkit-transform-origin:0 0 0;opacity:1;visibility:visible;transition:all .7s;color: red;}
 .menu ul li ul li a {
@@ -328,7 +328,7 @@ span.loai {
     font-family: 'Lato';
 }
 h4.pt-1 {
-    height: 46px;
+    height: 60px;
 }
 .bo{
     margin-bottom: 14px;
@@ -1338,7 +1338,7 @@ a.relative.inline-flex.items-center.px-2.py-2.text-sm.font-medium.text-gray-500.
 }
 .agileits_search button {
     border-radius: 0;
-    background: #1cae86;
+    background: #eb0101;
     color: #fff;
     width: 20%;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.22);
@@ -1425,7 +1425,7 @@ button.w3view-cart {
 
 .navbar-inner {
     box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.13);
-    background: #00bc88;
+    background: transparent;
 }
 
 .navbar-light .navbar-nav .nav-link {

@@ -57,7 +57,7 @@
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align">giá bán</label>
+											<label class="col-form-label col-md-3 col-sm-3 label-align">Giá bán</label>
 											<div class="col-md-6 col-sm-6 ">
 												<input type="text" class="form-control price_format " required="required" name="gia"  placeholder="Nhập giá">
 											</div>

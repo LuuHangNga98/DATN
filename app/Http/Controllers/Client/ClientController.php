@@ -260,7 +260,7 @@ public function profile(Request $request){
     $chinh=chinhsach::limit(3)->get();
             //seo 
     $meta_desc ="Thông tin khách hàng"; 
-    $meta_title ="thông tin khách hàng";
+    $meta_title ="tzzhông tin khách hàng";
     $url_canonical = $request->url();
     return view('client.profile',compact('meta_title','meta_desc','url_canonical','com','cate','cate_post1','chinh','cus'));
 }

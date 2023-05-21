@@ -28,7 +28,7 @@ use Socialite; //sử dụng Socialite
 class  CheckoutController extends Controller
 {
     public function print_order($checkout_code){
-        $pdf = \App::make('dompdf.wrapper');
+        $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML($this->print_order_convert($checkout_code));
         
         return $pdf->stream();

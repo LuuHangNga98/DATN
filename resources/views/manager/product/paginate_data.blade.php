@@ -33,14 +33,14 @@
                               <a href="{{route('huykichhoat',$p->product_id)}}" title="Hiển thị"><i class="glyphicon glyphicon-eye-open success"></i></a>
                             
                             @elseif($p->product_status==0)
-                              <a href="{{route('kichhoat',$p->product_id)}}" title="ẩn"><i class="glyphicon glyphicon-eye-close"></i></a>
+                              <a href="{{route('kichhoat',$p->product_id)}}" title="Ẩn"><i class="glyphicon glyphicon-eye-close"></i></a>
                             
                             @endif
                           </td>
                           <td>
-                              <a href="{{route('add_img',$p->product_id)}}" title="thêm thư viện"><i class="glyphicon glyphicon-th"></i></a>
-                              <a href="{{route('product_edit',$p->product_id)}}" title="sữa sản phẩm"><i class="glyphicon glyphicon-pencil"></i></a>
-                              <a onclick="return confirm('bạn có chắc muốn xóa không?')" href="{{route('delete_pro',$p->product_id)}}" title="xóa sản phẩm"><i class="glyphicon glyphicon-trash"></i></a></td>
+                              <a href="{{route('add_img',$p->product_id)}}" title="Thêm thư viện"><i class="glyphicon glyphicon-th"></i></a>
+                              <a href="{{route('product_edit',$p->product_id)}}" title="Sửa sản phẩm"><i class="glyphicon glyphicon-pencil"></i></a>
+                              <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="{{route('delete_pro',$p->product_id)}}" title="xóa sản phẩm"><i class="glyphicon glyphicon-trash"></i></a></td>
                         </tr>
                         @endforeach
                       </tbody>

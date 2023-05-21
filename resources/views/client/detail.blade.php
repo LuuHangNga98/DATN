@@ -36,12 +36,13 @@
 											<img src="{{asset('images/'.$value->product_image)}}" data-imagezoom="true" class="img-fluid" alt="">
 										</div>
 									</li>
-									@foreach($img_detail as $d)
+									<!-- Them anh-->
+									<!-- @foreach($img_detail as $d)
 									<li data-thumb="{{asset('upload_img/'.$d->images)}}">
 										<div class="thumb-image">
 											<img src="{{asset('upload_img/'.$d->images)}}" data-imagezoom="true" class="img-fluid" alt=""> </div>
 										</li>
-										@endforeach
+										@endforeach -->
 									</ul>
 									<div class="clearfix"></div>
 								</div>
@@ -91,7 +92,7 @@
 										<fieldset class="chon">
 											<ul>
 												
-												<li class="mb-3">
+												 <li class="mb-3">
 													<p><span style="font-family:unset;font-weight: 700;">Chọn Size</span></p>
 													<div class="bao2">
 														@foreach($size as $id=>$data)
@@ -114,7 +115,7 @@
 														</div>
 														@endforeach
 													</div>
-												</li>
+												</li> 
 
 
 												
