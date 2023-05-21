@@ -72,7 +72,7 @@ class MailController extends Controller
                 $message->from($data['customer_email'],$title_mail);//send from this mail
         });
   
-         return redirect()->back()->with('message','Gửi mã khuyến mãi khách vip thành công');
+         return redirect()->back()->with('message','Gửi mã khuyến mãi khách hàng vip thành công');
     }
     public function mail_example(){
         return view('admin.mail.send_coupon_vip');

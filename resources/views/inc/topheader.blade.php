@@ -1,4 +1,5 @@
 <style>
+<<<<<<< HEAD
 								.dropbtn3 {
 									background-color: #ffffff;
 									border-radius: 5px;
@@ -7,40 +8,57 @@
 									font-size: 16px;
 									border: none;
 								}
+=======
+	.dropbtn2 {
+		background-color: #ffffff;
+		border-radius: 5px;
+		/* color: white; */
+		padding: 0px 5px;
+		font-size: 16px;
+		border: none;
+	}
+>>>>>>> e137244e1db9b09ad83a80a630f26742cb3c8b06
 
-								.dropdown {
-									position: relative;
-									display: inline-block;
-								}
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
 
-								.dropdown-content {
-									display: none;
-									position: absolute;
-									background-color: #f1f1f1;
-									min-width: 160px;
-									box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-									z-index: 1;
-								}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f1f1f1;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		z-index: 1;
+	}
 
-								.dropdown-content a {
-									color: black;
-									padding: 12px 16px;
-									text-decoration: none;
-									display: block;
-								}
+	.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}
 
-								.dropdown-content a:hover {
-									background-color: #ddd;
-								}
+	.dropdown-content a:hover {
+		background-color: #ddd;
+	}
 
-								.dropdown:hover .dropdown-content {
-									display: block;
-								}
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
 
+<<<<<<< HEAD
 								.dropdown:hover .dropbtn3 {
 									background-color: #c5d5c5;
 								}
 							</style>
+=======
+	.dropdown:hover .dropbtn2 {
+		background-color: #c5d5c5;
+	}
+</style>
+>>>>>>> e137244e1db9b09ad83a80a630f26742cb3c8b06
 <div class="agile-main-top">
 	<div class="container-fluid">
 		<div class="row main-top-w3l py-2">
@@ -51,26 +69,26 @@
 					<?php
 					$cus_id = Session::get('customer_id');
 					if (isset($cus_id)) { ?>
-							<div class="dropdown">
-								<button class="dropbtn2"><span class="fas fa-user"></span></button>
-								<div class="dropdown-content">
-									<a class="profile1" href="{{URL::to('profile')}}">Xem chi tiết tài khoản</a>
-									<a style="color: black" href="{{url('/history')}}" class="text-black">@lang('lang.orderhistory')</a>
-									<a style="color: black" href="{{route('dangxuat_kh')}}" class="text-black">@lang('lang.Logout') </a>
-									
-								</div>
+						<div class="dropdown">
+							<button class="dropbtn2"><span class="fas fa-user"></span></button>
+							<div class="dropdown-content">
+								<a class="profile1" href="{{URL::to('profile')}}">Xem chi tiết tài khoản</a>
+								<a style="color: black" href="{{url('/history')}}" class="text-black">@lang('lang.orderhistory')</a>
+								<a style="color: black" href="{{route('dangxuat_kh')}}" class="text-black">@lang('lang.Logout') </a>
+
 							</div>
+						</div>
 
 					<?php } else { ?>
 						<div class="dropdown">
-								<button class="dropbtn2"><span class="fas fa-user"></span></button>
-								<div class="dropdown-content">
+							<button class="dropbtn2"><span class="fas fa-user"></span></button>
+							<div class="dropdown-content">
 								<a href="#" style="color:black" data-toggle="modal" data-target="#exampleModal" class="text-black">@lang('lang.login') </a>
 								<a style="color:black" href="#" data-toggle="modal" data-target="#exampleModal2" class="text-black"></i>@lang('lang.registration') </a>
-									
-								</div>
+
 							</div>
-						<?php } ?>
+						</div>
+					<?php } ?>
 					@if(session()->has('thank'))
 					<li class="text-center border-right text-black">
 						<marquee><i style="color:black;"></i>

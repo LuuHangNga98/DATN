@@ -14,7 +14,7 @@
         "intervention/image": "*",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
-        "laravel/socialite": "*",
+        "laravel/socialite": "^5.6",
         "laravel/tinker": "^2.7",
         "maatwebsite/excel": "*"
     },

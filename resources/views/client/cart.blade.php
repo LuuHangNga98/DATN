@@ -1,6 +1,9 @@
 @extends('Client.layout_cli')
 @section('content')
+<<<<<<< HEAD
 	
+=======
+>>>>>>> e137244e1db9b09ad83a80a630f26742cb3c8b06
 	<!-- //banner-2 -->
 	<!-- page -->
 	<div class="services-breadcrumb">

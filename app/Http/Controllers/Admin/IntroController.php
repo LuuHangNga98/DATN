@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\intro;
-use Session;
-use File;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\File;
 
 class IntroController extends Controller
 {

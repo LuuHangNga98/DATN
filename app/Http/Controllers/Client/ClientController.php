@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\product;
-use Session;
+use Illuminate\Support\Facades\Session;
 use App\Models\category;
 use App\Models\pro_img;
 use App\Models\rating;
@@ -20,7 +20,7 @@ use App\Models\intro;
 use App\Models\thuoctinh;
 use App\Models\custommer;
 use App\Models\chinhsach;
-use DB;
+use Illuminate\Support\Facades\DB;
 class ClientController extends Controller
 {
     public function error_page(){
@@ -33,12 +33,12 @@ class ClientController extends Controller
     public function giohang(){
      $output='';
      $total = 0 ;
-     if(count((array)session::get('cart'))==0){
+     if(count((array)Session::get('cart'))==0){
         $output.='<a href="#" title="View your shopping cart" class="cart-link">
         <span class="amount"> 0 VNĐ</span>
-        <span class="contents"><span class="badge badge-pill badge-danger">0</span><span class="lai">loại sản phẩm</span></span>';
+        <span class="contents"><span class="badge badge-pill badge-danger">0</span><span class="lai">Sản phẩm</span></span>';
     }else{
-        foreach(session::get('cart') as $id => $details){
+        foreach(Session::get('cart') as $id => $details){
             $si=$details['size'];
             $km=$details['price']-$details['price_pro'];
             if($si=="Lớn")
@@ -53,7 +53,7 @@ class ClientController extends Controller
     }
     $output.='<a href="#" title="View your shopping cart" class="cart-link">
     <span class="amount">'. number_format($total,0,',','.').' VNĐ</span>
-    <span class="contents"><span class="badge badge-pill badge-danger">'.count((array)session::get('cart')) .'</span><span class="lai">loại sản phẩm</span></span>';
+    <span class="contents"><span class="badge badge-pill badge-danger">'.count((array)session::get('cart')) .'</span><span class="lai">Loại sản phẩm</span></span>';
 }
 echo $output;
 
@@ -62,7 +62,7 @@ public function show(Request $req){
     $output='';
 
     $output.='<div class="cart">
-    <img class=" left1" width="70px" height="60px" src="../web/images/so.jpg" alt="">
+    <img class=" left1" width="200px" height="200px" src="../web/images/cart.jpg" alt="">
     <div class="cart-items">';
     $output.= '<ul>';
     if(session::get('cart')){

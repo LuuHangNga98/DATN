@@ -5,22 +5,24 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Mail\TestMail;
 use Illuminate\Http\Request;
-use Session;
+use Illuminate\Support\Facades\Session;
 use App\Models\custommer;
 use App\Models\category;
 use App\Models\coupon;
 use App\Models\CatePost;
 use App\Models\chinhsach;
-use DB;
 use App\Models\shipping;
 use App\Models\Order;
 use App\Models\OrderDetail;
-use PDF;
+use Illuminate\Support\Facades\App;
+use Laravel\Socialite\Facades\Socialite;; //sử dụng Socialite
+use Illuminate\Support\Facades\PDF;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Login;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Social; //sử dụng model Social
-use Socialite; //sử dụng Socialite
 
 
 
@@ -438,6 +440,7 @@ class  CheckoutController extends Controller
          // return redirect()->route('cli_index');
     }
     public function dangky(Request $req){
+        //dd($req);
         $this->validate($req, [
             'name'=>'required',
             'email'=>'required|email|unique:tbl_customers,customer_email',
@@ -468,7 +471,7 @@ class  CheckoutController extends Controller
     	Session::put('customer_id',$cus_id);
     	Session::put('customer_name',$req->customer_name);
     	return redirect()->route('cli_index');
-
+        
         $email = $req->email;
         $code = bcrypt(md5(time().$email));
         $url = route('xacnhanTK',['name'=>$req->name,'email'=>$req->email,'phone'=>$req->sdt,'password'=>md5($req->password),'code_active'=>$code]);
@@ -476,10 +479,10 @@ class  CheckoutController extends Controller
             'route' =>$url
         ];
         Mail::to($email)->send(new TestMail());
-        return redirect()->route('cli_index')->with('message','XIN BẠN HÃY CHECK MAIL ĐỂ XÁC NHẬN TÀI KHOẢN!!');;
+        return redirect()->route('cli_index')->with('message','XIN BẠN HÃY CHECK MAIL ĐỂ XÁC NHẬN TÀI KHOẢN!!');
     }
     public function xacnhanTK(Request $req){
-        //dd($req->name);
+        // dd($req->name);
         //dd($req->all());
         $email = $req->email;
         $name = $req->name;
@@ -704,40 +707,40 @@ public function login_facebook(){
 public function callback_facebook(){
     $provider = Socialite::driver('facebook')->user();
     dd($provider);
-    // $account = Social::where('provider','facebook')->where('provider_user_id',$provider->getId())->first();
-    // if($account){
-    //     //login in vao trang quan tri  
-    //     $account_name = Login::where('admin_id',$account->user)->first();
-    //     Session::put('admin_login',$account_name->admin_name);
-    //     Session::put('admin_id',$account_name->admin_id);
-    //     return redirect('/admin/dashboard')->with('message', 'Đăng nhập Admin thành công');
-    // }else{
+    $account = Social::where('provider','facebook')->where('provider_user_id',$provider->getId())->first();
+    if($account){
+        //login in vao trang quan tri  
+        $account_name = Login::where('admin_id',$account->user)->first();
+        Session::put('admin_login',$account_name->admin_name);
+        Session::put('admin_id',$account_name->admin_id);
+        return redirect('/admin/dashboard')->with('message', 'Đăng nhập Admin thành công');
+    }else{
 
-    //     $hieu = new Social([
-    //         'provider_user_id' => $provider->getId(),
-    //         'provider' => 'facebook'
-    //     ]);
+        $hieu = new Social([
+            'provider_user_id' => $provider->getId(),
+            'provider' => 'facebook'
+        ]);
 
-    //     $orang = Login::where('admin_email',$provider->getEmail())->first();
+        $orang = Login::where('admin_email',$provider->getEmail())->first();
 
-    //     if(!$orang){
-    //         $orang = Login::create([
-    //             'admin_name' => $provider->getName(),
-    //             'admin_email' => $provider->getEmail(),
-    //             'admin_password' => '',
-    //             'admin_status' => 1
+        if(!$orang){
+            $orang = Login::create([
+                'admin_name' => $provider->getName(),
+                'admin_email' => $provider->getEmail(),
+                'admin_password' => '',
+                'admin_status' => 1
 
-    //         ]);
-    //     }
-    //     $hieu->login()->associate($orang);
-    //     $hieu->save();
+            ]);
+        }
+        $hieu->login()->associate($orang);
+        $hieu->save();
 
-    //     $account_name = Login::where('admin_id',$account->user)->first();
+        $account_name = Login::where('admin_id',$account->user)->first();
 
-    //     Session::put('admin_login',$account_name->admin_name);
-    //      Session::put('admin_id',$account_name->admin_id);
-    //     return redirect('/admin/dashboard')->with('message', 'Đăng nhập Admin thành công');
-    // } 
+        Session::put('admin_login',$account_name->admin_name);
+         Session::put('admin_id',$account_name->admin_id);
+        return redirect('/admin/dashboard')->with('message', 'Đăng nhập Admin thành công');
+    } 
 }
 
 }

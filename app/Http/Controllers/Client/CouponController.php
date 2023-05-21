@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\coupon;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
 class CouponController extends Controller
 {

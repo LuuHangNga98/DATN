@@ -9,11 +9,12 @@ use App\Models\category;
 use App\Models\brand;
 use App\Models\Slider;
 use App\Models\attribute;
-use Session;
+use Illuminate\Support\Facades\Session;
 class CartController extends Controller
 {
 
     public function addtocart(Request $req){
+        dd($req->size);
         $id=$req->id;
         $product=product::find($id);
         $soluong_dat=$product->soluong;
