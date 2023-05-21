@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models\admin;
 use App\Models\Roles;
-use Session;
+use Illuminate\Support\Facades\Session;
 class AuthController extends Controller
 {
     // public function register_auth(){

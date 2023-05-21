@@ -9,8 +9,8 @@ use App\Models\User;
 use App\Models\admin;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Order;
-use DB;
-use Session;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 class LoginController extends Controller
 {
    
@@ -39,7 +39,7 @@ class LoginController extends Controller
             'password.max'=>'Mật khẩu không vượt quá 32 ký tự',
             're_password.same'=>'Mật khẩu không trùng khớp'
         ]);
-           
+
             $user = new User();
             $user->name = $req->name;
             $user->email = $req->email;
