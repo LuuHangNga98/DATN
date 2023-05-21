@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('lang/{local}',function($local){
-    if(!in_array($local,['en','vn'])){
-       abort(404);
-    }
-    Session()->put('local',$local);
-    return redirect()->back();
-    });
+// Route::get('lang/{local}',function($local){
+//     if(!in_array($local,['en','vn'])){
+//        abort(404);
+//     }
+//     Session()->put('local',$local);
+//     return redirect()->back();
+//     });
  Route::group(['prefix'=>'login','namespace'=>'Admin'],function(){
     Route::get('login','loginController@getdangnhap')->name('login');
     Route::post('postlogin','loginController@postdangnhap')->name('postlogin');

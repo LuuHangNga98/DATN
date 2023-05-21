@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CatePost;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\category;
 use App\Models\slider;
 use App\Models\contact;
