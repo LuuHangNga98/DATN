@@ -2,7 +2,6 @@
 	<div class="container">
 		<div class="row header-bot_inner_wthreeinfo_header_mid">
 			<!-- logo -->
-<<<<<<< HEAD
 			<div class="col-md-3 logo_agile">
 				<h1 class="text-center">
 					<a href="{{route('cli_index')}}">
@@ -29,11 +28,6 @@
 
 				</div>
 
-=======
-			<!-- //logo -->
-			<!-- header-bot -->
-			<div class="col-md-9 header mt-4 mb-md-0 mb-4">
->>>>>>> e137244e1db9b09ad83a80a630f26742cb3c8b06
 				<?php $total = 0 ?>
 				@foreach((array) session('cart') as $id => $details)
 				<?php

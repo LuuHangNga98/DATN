@@ -1,15 +1,5 @@
 <style>
-<<<<<<< HEAD
-								.dropbtn3 {
-									background-color: #ffffff;
-									border-radius: 5px;
-									/* color: white; */
-									padding: 0px 5px;
-									font-size: 16px;
-									border: none;
-								}
-=======
-	.dropbtn2 {
+	.dropbtn3 {
 		background-color: #ffffff;
 		border-radius: 5px;
 		/* color: white; */
@@ -17,7 +7,6 @@
 		font-size: 16px;
 		border: none;
 	}
->>>>>>> e137244e1db9b09ad83a80a630f26742cb3c8b06
 
 	.dropdown {
 		position: relative;
@@ -48,17 +37,10 @@
 		display: block;
 	}
 
-<<<<<<< HEAD
-								.dropdown:hover .dropbtn3 {
-									background-color: #c5d5c5;
-								}
-							</style>
-=======
 	.dropdown:hover .dropbtn2 {
 		background-color: #c5d5c5;
 	}
 </style>
->>>>>>> e137244e1db9b09ad83a80a630f26742cb3c8b06
 <div class="agile-main-top">
 	<div class="container-fluid">
 		<div class="row main-top-w3l py-2">

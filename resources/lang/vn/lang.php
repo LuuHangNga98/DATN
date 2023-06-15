@@ -38,17 +38,10 @@ return [
 	
 	'timKiem_yeuthich'=>'Tìm kiếm món ăn yêu thích',
 	'LatestProduct'=>'Sản phẩm mới nhất',
-<<<<<<< HEAD
-	'oldestProduct'=>'sản phẩm cũ nhất',
-	'giaGiam'=>'Sắp xếp theo giá giảm dần',
-	'giaTang'=>'Sắp xếp theo giá tăng dần',
-	'SapXep'=>'--------------sắp xếp--------------',
-=======
 	'oldestProduct'=>'Sản phẩm cũ nhất',
 	'giaGiam'=>'Sắp xếp theo giá giảm dần',
 	'giaTang'=>'Sắp xếp theo giá tăng dần',
 	'SapXep'=>'--------------Sắp xếp--------------',
->>>>>>> e137244e1db9b09ad83a80a630f26742cb3c8b06
 
 	//CHi tiet 
 	'ProductDetail'=>'Chi tiết sản phẩm',
@@ -62,11 +55,7 @@ return [
 	'cart'=>'Giỏ hàng',
 	'your_cart'=>'Giỏ hàng của bạn',
 	'product'=>'Sản phẩm',
-<<<<<<< HEAD
 	'total'=>'TỔNG TIỀN',
-=======
-	'total'=>'Tổng tiền',
->>>>>>> e137244e1db9b09ad83a80a630f26742cb3c8b06
 	'continute'=>'Tiếp tục mua hàng',
 	'payment_pro'=>'Tiến hành thanh toán',
 	'payment'=>'THANH TOÁN',
@@ -75,7 +64,6 @@ return [
 	'image'=>'Hình sản phẩm',
 	'price'=>'Giá sản phẩm',
 	'action'=>'Điều khiển',
-<<<<<<< HEAD
 	'provisional'=>'TẠM TÍNH',
 	'fee_shipping'=>'PHÍ VẬN CHUYỂN',
 	'fee'=>'Miền phí vận chuyển cho đơn hàng từ 200.000 VNĐ trở lên',
@@ -86,18 +74,6 @@ return [
 	'num'=>'Số điện thoại',
 	'add'=>'Địa chỉ',
 	'note'=>'Ghi chú',
-=======
-	'provisional'=>'Tạm tính',
-	'fee_shipping'=>'Phí vận chuỷen',
-	'fee'=>'Miền phí vận chuyển cho đơn hàng từ 200.000 VNĐ trở lên',
-	'dis_code'=>'Nhập mã khuyễn mãi (nếu có)',
-	'cus_info'=>'Thông tin khách hàng',
-	'cus_name'=>'Tên khách hàng',
-	'E_cus'=>'E-mail',
-	'num'=>'Số điện thoại',
-	'add'=>'Địa chỉ',
-	'note'=>'ghi chú',
->>>>>>> e137244e1db9b09ad83a80a630f26742cb3c8b06
 	'method'=>'chọn hình thức thanh toán',
 	'order_con'=>'Xác nhận đơn hàng',
 	'order_info'=>'Thông tin đơn hàng',

@@ -8,9 +8,9 @@
 </head>
 
 <body>
-	<div class="loader">
-		<img src="{!! asset('web/loading.gif')!!}" alt="Loading" width="300px" height="300px" style="border-radius: 100%;">
-	</div>
+	<!-- <div class="loader">
+		<img src="{!! asset('web/loading.gif')!!}" alt="Loading"  style="border-radius: 100%;">
+	</div> -->
 	<!-- top-header -->
    
 
